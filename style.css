@@ -1,0 +1,186 @@
+/* ---------- Base (mobile-first) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1d4ed8;
+  --blue-dark: #1e40af;
+  --text: #0f172a;
+  --muted: #475569;
+  --surface: #ffffff;
+  --neutral-bg: #e2e8f0;
+  --neutral-bg-hover: #cbd5e1;
+  --reset-color: #b91c1c;
+  --reset-bg: #fef2f2;
+  --reset-bg-hover: #fee2e2;
+  --focus: #f59e0b;
+  --radius: 1rem;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 50%, #f1f5f9 100%);
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 100%;
+  max-width: 26rem;
+  padding: 1.5rem 1.25rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  text-align: center;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.card__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.counter {
+  margin: 1.5rem 0;
+  font-size: clamp(4rem, 22vw, 7rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Buttons ---------- */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--blue-dark);
+}
+
+.btn--secondary {
+  background: var(--neutral-bg);
+  color: var(--text);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--neutral-bg-hover);
+}
+
+.btn--reset {
+  background: var(--reset-bg);
+  color: var(--reset-color);
+  border-color: var(--reset-color);
+}
+
+.btn--reset:hover {
+  background: var(--reset-bg-hover);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ---------- Tablet and up ---------- */
+@media (min-width: 48rem) {
+  .card {
+    max-width: 30rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .card__title {
+    font-size: 1.875rem;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+
+  .btn {
+    flex: 1;
+  }
+}
+
+/* ---------- Large desktop ---------- */
+@media (min-width: 90rem) {
+  .card {
+    max-width: 34rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: none;
+  }
+}

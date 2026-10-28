@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="app-title">
+      <header class="card__header">
+        <h1 id="app-title" class="card__title">Counter</h1>
+        <p class="card__subtitle">Add, subtract, or start over.</p>
+      </header>
+
+      <p id="counter-value" class="counter" aria-live="polite" aria-atomic="true">0</p>
+
+      <div class="actions">
+        <button id="increase-btn" class="btn btn--primary" type="button" aria-label="Increase count by 1">+ Increase</button>
+        <button id="decrease-btn" class="btn btn--secondary" type="button" aria-label="Decrease count by 1">&minus; Decrease</button>
+        <button id="reset-btn" class="btn btn--reset" type="button" aria-label="Reset count to 0">&#8635; Reset</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Built with HTML, CSS &amp; JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
